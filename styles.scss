@@ -1,0 +1,413 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.header{
+    color: white;
+    position: fixed;
+    width: 100%;
+    max-width: 1360px;
+    .header__navbar{
+            padding: 0 0;
+            background-color: transparent;
+
+        .logo{
+            position: absolute;
+            left: 0;
+            display: inline;
+            a{
+               left: 2px;
+                font-size: 2.5rem;
+                position: relative; 
+            }
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            right: 0px;
+            display: inline-flex;
+            li{
+                padding: 1rem;
+            }
+            .active{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    color: whitesmoke;
+    video{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        z-index: -10;
+    }
+   &__sliderContainer{
+       background-color: transparent;
+       width: 90%;
+       margin: 0 auto;
+       .carousel{
+           height: 90vh;
+           overflow: hidden;
+           &__slides{
+               height: 100%;
+               display: flex;
+               width: 300%;
+               transition: 0.3s;
+               section{
+                   flex-basis: 100%;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   text-align: center;
+                   & h2{
+                       font-size: 100px;
+                   }
+                   & p{
+                       font-size: 32px;
+                   }
+                   & button{
+                       width: 172px;
+                       height: 54px;
+                       border-radius: 27px;
+                       color: white;
+                       background: #00A031;
+                       border: none;
+                   }
+               }
+           }
+           &__controls{
+               .arrow{
+                   position: absolute;
+                   top: 45%;
+                   cursor: pointer;
+               }
+               .left{
+                   left: 10px;
+               }
+               .right{
+                   right: 10px;
+               }
+               ul{
+                   position: absolute;
+                   display: flex;
+                   bottom: 20px;
+                   list-style-type: none;
+                   left: 50%;
+                   transform: translate(-50%);
+                   padding: 0;
+                   margin: 0;
+                   li{
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50px;
+                    margin: 10px;
+                    background-color: white;
+                    cursor: pointer;
+                    &.selected{
+                        background-color: #00A031
+                        }
+                   }
+                   
+                }
+            }
+        }
+    }
+}
+
+.contact{
+    width: 100%;
+    height:80vh;
+    margin: 5% auto;
+    padding: 0;
+    background-color: whitesmoke;
+
+    .wrapper{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        margin: 0 auto;
+    }
+    &__list{
+        width: 30%;
+        position: relative;
+        top: 10%;
+        height: 80%; 
+        background-color: whitesmoke;
+        padding: 10px 4% 0;
+        & .heading{
+            h2{
+                color: green;
+                font-family: sans-serif;
+                font-size: 40px;
+            }
+            p{
+                color: grey;
+            }
+        } 
+        & .addresses{
+            padding-left: 1rem;
+            
+            & div{
+               height: 20%;
+               width: 100%;
+               cursor: pointer;
+               & h3{
+                   font-size: 23px;
+                   font-family: sans-serif;
+               }
+               & p{
+                color: grey;
+                }
+                & svg{
+                    margin-left: -25px;
+                    margin-top: 20px;
+                }
+                :active{
+                        box-shadow: 10px 10px 5px #aaaaaa;
+                        background-color: white;
+                    } 
+            }
+        }
+    }
+    &__map{
+        width: 75%;
+        height: 100%;
+        background-color: burlywood;
+        &#map{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__infos{
+        width: 20%;
+        right: 3%;
+        top: 125%;
+        position: absolute;
+        background-color: whitesmoke;
+        height: 50%;
+        padding: 5px 0 5px 3%;
+        & svg{
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+        & h3{
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        & p{
+            color: grey;
+        }
+    }
+}
+
+footer{
+    width: 100%;
+    height: 30vh;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    & h2{
+        font-size: 60px;
+        font-weight: 900;
+    }
+    & ul{
+        display: inline-flex;
+        position: relative;
+        color: grey;
+        list-style: none;
+        margin: 10px;
+        & li{
+            margin: 10px;
+            display: inline;
+            & a{
+                text-decoration: none;
+                color: grey;
+            }
+        }
+    }
+    & p{
+        margin-top: 25px;
+        
+    }
+}
+
+@media screen and (min-width: 360px){
+    #miles{
+        font-size: 50px;
+    }
+    #morales{
+        font-size: 25px;
+    }
+    .contact{
+        height: 100vh;
+        .wrapper{
+            flex-direction: column;
+            & .contact__list{
+                height: 90%;
+                top: 0%;
+                & .heading{
+                   & h2{
+                        font-size: 14px;
+                    }
+                   & p{
+                        font-size: 10px;
+                    }
+                }
+                & .addresses{
+                   & h2{
+                        font-size: 10px;
+                    }
+                   & p{
+                        font-size: 8px;
+                    }
+                }
+                
+            }
+            & .contact__infos{
+                height: 40%;
+                width: 35%;
+                top: 100%;
+            }
+        }
+        & svg{
+            width: 15px;
+            height: 15px;
+            margin: 0;
+        }
+        & h2{
+            font-size: 15px;
+        }
+        & h3{
+            font-size: 15px;
+        }
+    } 
+    .wrapper{
+        width: 100%;
+    }
+} 
+
+@media screen and (max-width: 900px){
+    #miles{
+        font-size: 50px;
+    }
+    #morales{
+        font-size: 25px;
+    }
+    .contact{
+        height: 100vh;
+        .wrapper{
+            flex-direction: column;
+            & .contact__list{
+                height: 90%;
+                top: 0%;
+            }
+            & .contact__infos{
+                height: 40%;
+                width: 35%;
+            }
+        }
+        & svg{
+            width: 15px;
+            height: 15px;
+            margin: 0;
+        }
+        & h2{
+            font-size: 15px;
+        }
+        & h3{
+            font-size: 15px;
+        }
+    } 
+    .wrapper{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:900px){
+    #miles{
+        font-size: 75px;
+    }
+    .contact{
+        height: 100vh;
+        & .wrapper{
+            & .contact__list{
+                height: 60%;
+                width: 85%;
+                top: 0%;
+            }
+            & .contact__infos{
+                height: 30%;
+                width: 35%;
+            }
+        }
+        & svg{
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+        & h2{
+            font-size: 20px;
+        }
+        & h3{
+            font-size: 15px;
+            margin-top: 5px;
+        }
+    } 
+    .wrapper{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1240px ){
+    #miles{
+        font-size: 75px;
+    }
+    .contact{
+        height: 100vh;
+        & .wrapper{
+            & .contact__list{
+                height: 60%;
+                width: 85%;
+                top: 0%;
+            }
+            & .contact__infos{
+                height: 30%;
+                width: 35%;
+            }
+        }
+        & svg{
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+        & h2{
+            font-size: 20px;
+        }
+        & h3{
+            font-size: 15px;
+            margin-top: 5px;
+        }
+    } 
+    .wrapper{
+        width: 100%;
+    }
+}
